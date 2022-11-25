@@ -2,6 +2,7 @@ import { exit } from 'node:process';
 import { pushChangesToGithub } from '@/script/util';
 import { crawlerReferendumData } from '@/script/crawlers/referendum';
 import { crawlerCouncilData } from '@/script/crawlers/council';
+import { crawlerMayorData } from '@/script/crawlers/mayor';
 
 const githubAPIToken = process.env.GITHUB_API_TOKEN;
 
@@ -51,6 +52,10 @@ async function startCrawler() {
   console.log('Crawling council data...');
   crawlerCouncilData();
   console.log('Finished crawling council data.');
+
+  console.log('Crawling mayor data...');
+  crawlerMayorData();
+  console.log('Finished crawling mayor data.');
 
   console.log('Crawler the data successfully');
 }

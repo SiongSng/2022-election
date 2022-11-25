@@ -57,3 +57,19 @@ export function pushChangesToGithub(runs: number, githubAPIToken: string) {
 
   fs.rmSync(cloneDir, { recursive: true });
 }
+
+export function formatCandidate(candidate: {
+  candNo: number;
+  name: string;
+  party: string;
+  tickets: number;
+  ratio: number;
+}) {
+  return {
+    number: candidate.candNo,
+    name: candidate.name,
+    party: candidate.party,
+    tickets: candidate.tickets,
+    rate: candidate.ratio,
+  };
+}

@@ -1,4 +1,4 @@
-import { writeJson } from '@/script/util';
+import { formatCandidate, writeJson } from '@/script/util';
 import fetch from 'cross-fetch';
 
 /**
@@ -33,15 +33,9 @@ export async function crawlerCouncilData() {
             ),
             processRate: rawConstituency.process,
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            candidates: rawConstituency.candidates.map((rawCandidate: any) => {
-              return {
-                number: rawCandidate.candNo,
-                name: rawCandidate.name,
-                party: rawCandidate.party,
-                tickets: rawCandidate.tickets,
-                rate: rawCandidate.ratio,
-              };
-            }),
+            candidates: rawConstituency.candidates.map((candidate: any) =>
+              formatCandidate(candidate)
+            ),
           };
 
           constituencies.push(constituency);
@@ -108,10 +102,29 @@ export interface CouncilCity {
  * 像是高雄市第1選舉區、高雄市第2選舉區、高雄市第3選舉區等等
  */
 export interface CouncilConstituency {
+  /**
+   * 選舉區代碼
+   */
   code: string;
+
+  /**
+   * 選舉區名稱
+   */
   name: string;
+
+  /**
+   * 這個選舉區包含的鄉鎮市區
+   */
   includeTowns: string[];
+
+  /**
+   * 開票進度
+   */
   processRate: number;
+
+  /**
+   * 候選人們
+   */
   candidates: CouncilCandidate[];
 }
 
