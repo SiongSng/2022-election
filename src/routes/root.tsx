@@ -5,6 +5,7 @@ function Root() {
     <div className="root">
       <div className="header">
         <Header />
+        歡迎來到本網站
       </div>
       <style jsx>{``}</style>
     </div>

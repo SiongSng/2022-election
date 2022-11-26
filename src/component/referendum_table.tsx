@@ -18,6 +18,9 @@ export class ReferendumTable extends React.Component<
     const disagreeRateStr =
       ((data.disagreeTickets / allTickets) * 100).toFixed(3) + '%';
 
+    const passThreshold = 9619697;
+    const passRate = (data.agreeTickets / passThreshold) * 100;
+
     return (
       <div className="table-container">
         <div className="box">
@@ -64,6 +67,16 @@ export class ReferendumTable extends React.Component<
               style={{ height: 10, borderRadius: 5 }}
             />
           </div>
+          <div className="pass-box">
+            <h2>通過門檻</h2>
+            <p>{passRate.toFixed(2)}%</p>
+            <LinearProgress
+              color="warning"
+              variant="determinate"
+              value={passRate}
+              style={{ height: 10, borderRadius: 5 }}
+            />
+          </div>
         </div>
 
         <style jsx>{`
@@ -107,6 +120,17 @@ export class ReferendumTable extends React.Component<
           .result-box p {
             margin: 5px;
             font-size: 1rem;
+          }
+
+          .pass-box {
+            margin-top: 15px;
+          }
+
+          .pass-box p {
+            margin: 5px;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: bold;
           }
 
           h2 {
