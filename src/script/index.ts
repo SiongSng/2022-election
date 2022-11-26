@@ -46,15 +46,15 @@ async function start() {
 
 async function startCrawler() {
   console.log('Crawling referendum data...');
-  crawlerReferendumData();
+  await crawlerReferendumData();
   console.log('Finished crawling referendum data.');
 
   console.log('Crawling council data...');
-  crawlerCouncilData();
+  await crawlerCouncilData();
   console.log('Finished crawling council data.');
 
   console.log('Crawling mayor data...');
-  crawlerMayorData();
+  await crawlerMayorData();
   console.log('Finished crawling mayor data.');
 
   console.log('Crawler the data successfully');
