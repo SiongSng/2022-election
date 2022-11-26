@@ -7,7 +7,7 @@ on:
     - cron: "*/60 */3 * * *"
 
 jobs:
-  fetch:
+  crawler:
     runs-on: ubuntu-latest
     env:
       GITHUB_API_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
