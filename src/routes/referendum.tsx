@@ -10,7 +10,7 @@ function ReferendumPage() {
 
   setInterval(async () => {
     await asyncReturn.execute();
-    console.log('refresh');
+    console.log('Referendum data successfully refreshed');
   }, 1000 * 60);
 
   return (
