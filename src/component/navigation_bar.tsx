@@ -5,7 +5,7 @@ import { NavigationLink } from '@/component/navigation_link';
 export class NavigationMenu extends React.Component {
   render(): React.ReactNode {
     return (
-      <div className="navigation_menu">
+      <div className="navigation-menu">
         <div className="hamburger">
           <HamburgerMenu />
         </div>
@@ -18,7 +18,7 @@ export class NavigationMenu extends React.Component {
           </ul>
         </div>
         <style jsx>{`
-          .navigation_menu {
+          .navigation-menu {
             margin-left: auto;
           }
 
