@@ -32,13 +32,49 @@ export class Footer extends React.Component<
     return (
       <div className="footer">
         <p className="time">{this.state.time} (每五鐘更新一次資料)</p>
+        <div className="author">
+          <p>
+            開發者：
+            <a
+              href="https://github.com/SiongSng/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              菘菘 (SiongSng)
+            </a>
+          </p>
+        </div>
+        <p>
+          本網站程式原始程式碼：
+          <a
+            href="https://github.com/SiongSng/2022-election"
+            target="_blank"
+            rel="noreferrer"
+          >
+            https://github.com/SiongSng/2022-election
+          </a>
+        </p>
         <style jsx>
           {`
+            .footer {
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+              background-color: #212121;
+              padding-top: 10px;
+            }
+
             .time {
               color: rgb(161, 144, 253);
               font-size: 1.1rem;
               font-weight: bold;
               text-align: center;
+            }
+
+            p {
+              color: white;
+              text-align: center;
+              margin-top: 5px;
             }
           `}
         </style>

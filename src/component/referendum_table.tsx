@@ -85,6 +85,7 @@ export class ReferendumTable extends React.Component<
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
           }
 
           .box {
@@ -102,7 +103,6 @@ export class ReferendumTable extends React.Component<
           }
 
           .progress-box p {
-            text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
             margin: 5px;
@@ -129,7 +129,6 @@ export class ReferendumTable extends React.Component<
           .pass-box p {
             margin: 5px;
             font-size: 1.5rem;
-            text-align: center;
             font-weight: bold;
           }
 

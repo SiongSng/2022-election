@@ -80,6 +80,7 @@
     padding: 10px 0;
     color: #fff;
     font-size: 1.1em;
+    text-decoration: inherit;
 }
 
 @media (prefers-color-scheme: light) {

@@ -5,11 +5,9 @@ import ReferendumPage from '@/routes/referendum';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MayorPage from '@/routes/mayor';
 import CouncilPage from '@/routes/council';
+import { BASE_ROUTE } from '@/routes/root';
 
 import '@/index.css';
-
-export const BASE_ROUTE =
-  process.env.NODE_ENV === 'production' ? '/2022-election' : '';
 
 const router = createBrowserRouter([
   {

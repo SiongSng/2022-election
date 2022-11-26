@@ -1,5 +1,8 @@
 import { Header } from '@/component/header';
 
+export const BASE_ROUTE =
+  process.env.NODE_ENV === 'production' ? '/2022-election' : '';
+
 function Root() {
   return (
     <div className="root">

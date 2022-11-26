@@ -1,4 +1,4 @@
-import { BASE_ROUTE } from '@/main';
+import { BASE_ROUTE } from '@/routes/root';
 
 export function NavigationLink(
   pageName: string,
@@ -28,6 +28,7 @@ export function NavigationLink(
           a {
             font-size: 1.2rem;
             color: white;
+            text-decoration: inherit;
           }
 
           @media (prefers-color-scheme: light) {
