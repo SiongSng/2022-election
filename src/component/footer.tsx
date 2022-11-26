@@ -31,7 +31,7 @@ export class Footer extends React.Component<
 
     return (
       <div className="footer">
-        <p className="time">{this.state.time} (每分鐘更新一次資料)</p>
+        <p className="time">{this.state.time} (每五鐘更新一次資料)</p>
         <style jsx>
           {`
             .time {
