@@ -1,5 +1,6 @@
 import { getReferendumData } from '@/api';
 import { ErrorMessage } from '@/component/error';
+import { Footer } from '@/component/footer';
 import { Header } from '@/component/header';
 import { Loading } from '@/component/loading';
 import { ReferendumTable } from '@/component/referendum_table';
@@ -22,6 +23,7 @@ function ReferendumPage() {
         {asyncReturn.loading && <Loading />}
         {asyncReturn.error && <ErrorMessage />}
         {asyncReturn.result && <ReferendumTable data={asyncReturn.result} />}
+        <Footer />
       </div>
       <style jsx>{`
         .title {

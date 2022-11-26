@@ -1,3 +1,4 @@
+import { Footer } from '@/component/footer';
 import { Header } from '@/component/header';
 
 function MayorPage() {
@@ -5,6 +6,7 @@ function MayorPage() {
     <div className="mayor">
       <div className="header">
         <Header />
+        <Footer />
       </div>
       <style jsx>{``}</style>
     </div>
