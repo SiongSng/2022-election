@@ -1,13 +1,13 @@
 import React from 'react';
-import { HamburgerMenu } from './hamburger';
+import { HamburgerMenu } from '@/component/hamburger';
 
 export class NavigationMenu extends React.Component {
   render(): React.ReactNode {
     return (
       <div className="navigation_menu">
-        <button className="hamburger">
+        <div className="hamburger">
           <HamburgerMenu />
-        </button>
+        </div>
         <div className="menu">
           <ul>
             <li>

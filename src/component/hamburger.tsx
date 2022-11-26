@@ -1,26 +1,23 @@
 import React from 'react';
-
+import { slide as Menu } from 'react-burger-menu';
+import '@/component/hamburger.css';
 export class HamburgerMenu extends React.Component {
   render(): React.ReactNode {
     return (
-      <div>
-        <svg viewBox="0 0 100 60" width="25" height="25" className="hamburger">
-          <rect width="100" height="12"></rect>
-          <rect y="30" width="100" height="12"></rect>
-          <rect y="60" width="100" height="12"></rect>
-        </svg>
-        <style jsx>{`
-          .hamburger {
-            fill: white;
-          }
-
-          @media (prefers-color-scheme: light) {
-            .hamburger {
-              fill: black;
-            }
-          }
-        `}</style>
-      </div>
+      <Menu>
+        <a className="menu-item" href="/">
+          首頁
+        </a>
+        <a className="menu-item" href="/mayor">
+          縣市長
+        </a>
+        <a className="menu-item" href="/council">
+          縣市議員
+        </a>
+        <a className="menu-item" href="/referendum">
+          憲法修正案公民複決
+        </a>
+      </Menu>
     );
   }
 }
