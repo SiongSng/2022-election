@@ -45,17 +45,29 @@ async function start() {
 }
 
 async function startCrawler() {
-  console.log('Crawling referendum data...');
-  await crawlerReferendumData();
-  console.log('Finished crawling referendum data.');
+  try {
+    console.log('Crawling referendum data...');
+    await crawlerReferendumData();
+    console.log('Finished crawling referendum data.');
+  } catch (error) {
+    console.error('Failed to crawl referendum data.', error);
+  }
 
-  console.log('Crawling council data...');
-  await crawlerCouncilData();
-  console.log('Finished crawling council data.');
+  try {
+    console.log('Crawling council data...');
+    await crawlerCouncilData();
+    console.log('Finished crawling council data.');
+  } catch (error) {
+    console.error('Failed to crawl council data.', error);
+  }
 
-  console.log('Crawling mayor data...');
-  await crawlerMayorData();
-  console.log('Finished crawling mayor data.');
+  try {
+    console.log('Crawling mayor data...');
+    await crawlerMayorData();
+    console.log('Finished crawling mayor data.');
+  } catch (error) {
+    console.error('Failed to crawl mayor data.', error);
+  }
 
   console.log('Crawler the data successfully');
 }
