@@ -11,6 +11,7 @@ module.exports = {
   root: true,
   rules: {
     'prettier/prettier': ['warn', { endOfLine: 'auto' }],
+    'react/no-unknown-property': ['error', { ignore: ['jsx'] }],
   },
   settings: {
     react: {
