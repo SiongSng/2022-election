@@ -28,8 +28,6 @@ export function pushChangesToGithub(runs: number, githubAPIToken: string) {
     `git clone --single-branch --branch data "https://x-access-token:${githubAPIToken}@github.com/SiongSng/2022-election.git" "${cloneDir}"`
   );
 
-  childProcess.execSync(`cp -R data ${cloneDir}`);
-
   const needsPush: boolean =
     childProcess.execSync(`git status --porcelain`, {
       encoding: 'utf8',
