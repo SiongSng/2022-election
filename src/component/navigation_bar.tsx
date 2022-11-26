@@ -1,5 +1,6 @@
 import React from 'react';
 import { HamburgerMenu } from '@/component/hamburger';
+import { NavigationLink } from '@/component/navigation_link';
 
 export class NavigationMenu extends React.Component {
   render(): React.ReactNode {
@@ -10,18 +11,10 @@ export class NavigationMenu extends React.Component {
         </div>
         <div className="menu">
           <ul>
-            <li>
-              <a href="/">首頁</a>
-            </li>
-            <li>
-              <a href="/mayor">縣市長</a>
-            </li>
-            <li>
-              <a href="/council">縣市議員</a>
-            </li>
-            <li>
-              <a href="/referendum">憲法修正案公民複決</a>
-            </li>
+            {NavigationLink('首頁', '/')}
+            {NavigationLink('縣市長', '/mayor')}
+            {NavigationLink('議員', '/council')}
+            {NavigationLink('憲法修正案公民複決', '/referendum')}
           </ul>
         </div>
         <style jsx>{`
@@ -36,16 +29,6 @@ export class NavigationMenu extends React.Component {
           .menu ul {
             display: flex;
             padding: 0;
-          }
-
-          .menu li {
-            list-style-type: none;
-            margin: 0 1rem;
-          }
-
-          .menu a {
-            font-size: 1.2rem;
-            color: white;
           }
 
           .menu a:hover {
