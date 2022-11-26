@@ -9,7 +9,7 @@ export async function crawlerCouncilData() {
   const timestamp = new Date().getTime();
   const url = `https://www.cna.com.tw/project/20221126-election-live/api/council.json?t=${timestamp}`;
 
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: 'no-cache' });
 
   if (response.status === 200) {
     const cities = await response.json();
