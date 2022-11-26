@@ -1,3 +1,5 @@
+import { BASE_ROUTE } from '@/main';
+
 export function NavigationLink(
   pageName: string,
   pagePath: string
@@ -6,7 +8,7 @@ export function NavigationLink(
     <div>
       <li>
         <a
-          href={pagePath}
+          href={`${BASE_ROUTE}${pagePath}`}
           style={
             window.location.pathname === pagePath
               ? { color: '#747bff', fontWeight: 'bold' }
