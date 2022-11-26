@@ -12,8 +12,11 @@ export class ReferendumTable extends React.Component<
 
   render(): React.ReactNode {
     const data = this.props.data;
-    const agreeRateStr = data.agreeRate * 100 + '%';
-    const disagreeRateStr = data.disagreeRate * 100 + '%';
+    const allTickets = data.agreeTickets + data.disagreeTickets;
+    const agreeRateStr =
+      ((data.agreeTickets / allTickets) * 100).toFixed(3) + '%';
+    const disagreeRateStr =
+      ((data.disagreeTickets / allTickets) * 100).toFixed(3) + '%';
 
     return (
       <div className="table-container">
@@ -55,7 +58,7 @@ export class ReferendumTable extends React.Component<
             <h2>開票進度</h2>
             <p>{data.processRage}%</p>
             <LinearProgress
-              color="success"
+              color="info"
               variant="determinate"
               value={data.processRage}
               style={{ height: 10, borderRadius: 5 }}
