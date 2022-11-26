@@ -21,6 +21,7 @@ jobs:
         run: yarn build
       - name: Deploy
         run: |
+          cp dist/index.html dist/404.html
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
           git config --global user.name "GitHub Actions Bot"
           git --work-tree dist add --all

@@ -8,21 +8,23 @@ import CouncilPage from '@/routes/council';
 
 import '@/index.css';
 
+const baseRoute = process.env.NODE_ENV === 'production' ? '/2022-election' : '';
+
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: `${baseRoute}/`,
     element: <Root />,
   },
   {
-    path: '/referendum',
+    path: `${baseRoute}/referendum`,
     element: <ReferendumPage />,
   },
   {
-    path: '/mayor',
+    path: `${baseRoute}/mayor`,
     element: <MayorPage />,
   },
   {
-    path: '/council',
+    path: `${baseRoute}/council`,
     element: <CouncilPage />,
   },
 ]);
