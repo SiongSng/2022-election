@@ -20,7 +20,7 @@ async function start() {
     try {
       if (githubAction) pushChangesToGithub(runs, githubAPIToken);
     } catch (error) {
-      console.error('Failed to push changes to github.', error);
+      console.warn('Failed to push changes to github.', error);
     }
     console.log('Finished');
   }

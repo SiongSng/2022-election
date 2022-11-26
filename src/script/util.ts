@@ -28,30 +28,22 @@ export function pushChangesToGithub(runs: number, githubAPIToken: string) {
     `git clone --single-branch --branch data "https://x-access-token:${githubAPIToken}@github.com/SiongSng/2022-election.git" "${cloneDir}"`
   );
 
-  const needsPush: boolean =
-    childProcess.execSync(`git status --porcelain`, {
-      encoding: 'utf8',
-      cwd: cloneDir,
-    }).length > 0;
+  const time = new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Taipei',
+  });
 
-  if (needsPush) {
-    const time = new Date().toLocaleString('en-US', {
-      timeZone: 'Asia/Taipei',
-    });
+  childProcess.execSync('git checkout --orphan latest_branch', option);
 
-    childProcess.execSync('git checkout --orphan latest_branch', option);
+  childProcess.execSync(`git add -A`, option);
+  childProcess.execSync(
+    `git commit --message "Auto update data @${time}"`,
+    option
+  );
+  childProcess.execSync('git branch -D data', option);
+  childProcess.execSync('git branch -m data', option);
 
-    childProcess.execSync(`git add -A`, option);
-    childProcess.execSync(
-      `git commit --message "Auto update data @${time}"`,
-      option
-    );
-    childProcess.execSync('git branch -D data', option);
-    childProcess.execSync('git branch -m data', option);
-
-    childProcess.execSync(`git push -f origin data`, option);
-    console.log('Pushed successfully');
-  }
+  childProcess.execSync(`git push -f origin data`, option);
+  console.log('Pushed successfully');
 
   fs.rmSync(cloneDir, { recursive: true });
 }
