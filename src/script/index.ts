@@ -35,12 +35,12 @@ async function start() {
       second++;
     }, 1000);
 
-    // Runs every minute
+    // Runs every 5 minute
     setInterval(() => {
       runs++;
 
       _start().then(() => console.log(`[${runs}] Waiting for next crawler...`));
-    }, 1000 * 60);
+    }, 1000 * 60 * 5);
   }
 }
 
