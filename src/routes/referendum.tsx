@@ -39,6 +39,12 @@ function ReferendumPage() {
 
           color: rgb(232, 232, 232);
         }
+
+        @media (prefers-color-scheme: light) {
+          .subtitle {
+            color: rgb(47, 47, 47);
+          }
+        }
       `}</style>
     </div>
   );

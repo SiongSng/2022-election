@@ -29,6 +29,12 @@ export function NavigationLink(
             font-size: 1.2rem;
             color: white;
           }
+
+          @media (prefers-color-scheme: light) {
+            a {
+              color: black;
+            }
+          }
         `}
       </style>
     </div>

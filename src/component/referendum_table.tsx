@@ -118,6 +118,12 @@ export class ReferendumTable extends React.Component<
               width: 90%;
             }
           }
+
+          @media (prefers-color-scheme: light) {
+            .box {
+              background-color: rgb(224, 224, 224);
+            }
+          }
         `}</style>
       </div>
     );
