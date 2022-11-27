@@ -2,9 +2,10 @@ name: Crawler the data
 
 on:
   workflow_dispatch:
-  schedule:
-    # Runs every three hour
-    - cron: "*/60 */3 * * *"
+  # Stop automatically crawling data because the election has ended.
+  # schedule:
+  #   # Runs every three hour
+  #   - cron: "*/60 */3 * * *"
 
 jobs:
   crawler:

@@ -31,7 +31,9 @@ export class Footer extends React.Component<
 
     return (
       <div className="footer">
-        <p className="time">{this.state.time} (每五鐘更新一次資料)</p>
+        <p className="time">
+          {this.state.time} (因選舉已結束，所以停止自動更新開票進度)
+        </p>
         <div className="author">
           <p>
             開發者：

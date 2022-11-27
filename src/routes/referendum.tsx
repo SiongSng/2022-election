@@ -9,10 +9,10 @@ import { useAsync } from 'react-async-hook';
 function ReferendumPage() {
   const asyncReturn = useAsync(getReferendumData, []);
 
-  setInterval(async () => {
-    await asyncReturn.execute();
-    console.log('Referendum data successfully refreshed');
-  }, 1000 * 60 * 5);
+  // setInterval(async () => {
+  //   await asyncReturn.execute();
+  //   console.log('Referendum data successfully refreshed');
+  // }, 1000 * 60 * 5);
 
   return (
     <div className="referendum">
